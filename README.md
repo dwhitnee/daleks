@@ -17,5 +17,5 @@ jQuery is used for DOM manipulation and event handling.
 Google Closure Compiler for compilation and compression.
 
 Gameplay inspired by the 1984 Mac version by Johan Strandberg, but it is much like the other "robots" type games as seen here on Wikipedia
-http://en.wikipedia.org/wiki/Daleks_%28video_game%29
+http://en.wikipedia.org/wiki/Daleks_(video_game)
 
