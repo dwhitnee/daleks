@@ -11,9 +11,11 @@ No canvas, just HTML elements and CSS.  Each image is an HTML div with the backg
 
 ## Credits
 All code written and directed by David Whitney.
+
 Images stolen liberally from the web.
 
 jQuery is used for DOM manipulation and event handling.
+
 Google Closure Compiler for compilation and compression.
 
 Gameplay inspired by the 1984 Mac version by Johan Strandberg, but it is much like the other "robots" type games as seen here on Wikipedia
