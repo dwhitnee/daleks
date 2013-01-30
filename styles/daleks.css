@@ -1,0 +1,218 @@
+body {
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.rotateMe { display: none; }
+@media screen and (max-width: 320px) { /* Portait Mode */
+    .rotateMe { display: block; }
+    .arena { display: none; }
+    .actions { display: none; }
+}
+
+ /* double everything, is there an easier way? */
+@media
+only screen and (-webkit-min-device-pixel-ratio : 1.5),
+only screen and (min-device-pixel-ratio : 1.5) {
+    .board .piece {
+        height: 32px;
+        width: 32px;
+    }
+    .actions a.button {
+        font-size: 20pt;
+    }
+}
+
+h1 {
+    font-size: 1.5em;
+    margin: 0;
+    padding-left: 8em;
+}
+.gameData {
+    padding: 4em;
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+#highScores {
+    padding-top: 1em;
+}
+#instructions {
+    padding-top: 5em;
+}
+.loading {
+    background: url("../images/loading.gif") 240px 120px no-repeat;
+    height:200px;
+    width:300px;
+}
+.dalek {
+    background: url("../images/dalek.png") no-repeat;
+}
+.doctor {
+    background: url("../images/doctor.png") no-repeat;
+}
+.dead {
+    background: url("../images/explosion.gif") no-repeat;
+    background-size: cover;
+}
+.rubble {
+    background: url("../images/rubble.png") no-repeat;
+}
+
+.arrow {
+    display: none;  /* at first */
+    z-index: 1;
+}
+
+.small {
+    font-size: small;
+}
+
+.sonicPulse {
+    position: absolute;
+}
+.sonicPulse .pulse {
+    position: absolute;
+    display: none;
+    border: 1px solid black;
+    border-radius: 50%;
+    opacity: .75;
+}
+/* concentric circles, to be animated with display: */
+.sonicPulse .pulse1 {  width: 16px; height: 16px; left: 8px; top: 8px; }
+.sonicPulse .pulse2 {  width: 20px; height: 20px; left: 6px; top: 6px; }
+.sonicPulse .pulse3 {  width: 24px; height: 24px; left: 4px; top: 4px; }
+.sonicPulse .pulse4 {  width: 28px; height: 28px; left: 2px; top: 2px; }
+.sonicPulse .pulse5 {  width: 32px; height: 32px; }
+
+.actions {
+    padding: 1em;
+}
+
+a.button {
+    display: block;
+    float: left;
+    font: bold 10pt Arial, Helvetica, sans-serif;
+    margin: 0 1em;
+    padding: .5em 1em;
+    text-align: center;
+    text-decoration: none;
+    background-color: #5489D0;
+    color: #1E4F92;
+    border: 1px solid #3E6491;
+    border-radius: 4px;
+    text-shadow: 0 1px 1px rgba(254, 252, 252, 0.5);
+}
+
+a.button:active {
+    background-color: #4E74A1;
+    text-shadow: none;
+}
+
+a.button.disabled {
+    color: #666;
+    background-color: #999;
+    border: 1px solid #999;
+    text-shadow: none;
+}
+
+.unselectable {
+  -moz-user-select:    none;
+  -webkit-user-select: none;
+  -ms-user-select:     none;
+}
+
+.button[data-name=abort] {
+    display: none;
+}
+
+
+
+.gameover {
+    position: absolute;
+    z-index: 2;
+    margin: 4em;
+    padding: 2em;
+    height: 6em;
+    width: 15em;
+    border-radius: 1em;
+    line-height: 3em;
+    opacity: 0.75;
+    background: grey;
+    border: 5px solid;
+}
+
+.banner {
+    font-weight: bold;
+    opacity: 1.0;
+}
+.victory {
+    display: none;
+    border-color: green;
+    background: #ada;
+}
+.loser {
+    display: none;
+    border-color: red;
+    background: #daa;
+}
+
+.arena {
+    border: 2px solid;
+    border-radius: 8px;
+    height: 324px;
+    width: 484px;
+    padding: 2px;
+}
+
+.board {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+.piece {
+    position: absolute;
+    background-size: 100%;  /* scale to h/w */
+    height: 16px;
+    width: 16px;
+}
+
+
+
+
+/* arrow icons */
+/*
+.n  { background: url("images/n.png") no-repeat; }
+.s  { background: url("images/s.png") no-repeat; }
+.e  { background: url("images/e.png") no-repeat; }
+.w  { background: url("images/w.png") no-repeat; }
+.ne { background: url("images/ne.png") no-repeat; }
+.nw { background: url("images/nw.png") no-repeat; }
+.se { background: url("images/se.png") no-repeat; }
+.sw { background: url("images/sw.png") no-repeat; }
+*/
+.n {
+    background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAA8AAAAPCAYAAAA71pVKAAAABmJLR0QA/wD/AP+gvaeTAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAQ0lEQVQoz82SOw4AMAhCfd7/znRq0kX7SxsZhcdARJKdyu1CKQwI0DY8QlGBz8Ds5iuhyCNbu4cl8XftujA13/Mp3AAe/BUj39LO1wAAAABJRU5ErkJggg==) no-repeat;
+}
+.ne {
+    background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAA8AAAAPCAYAAAA71pVKAAAABmJLR0QA/wD/AP+gvaeTAAAACXBIWXMAAAsTAAALEwEAmpwYAAAARklEQVQoz2P8//8/A7mAiYECwIJPkpGREauz/v//z0jQZpgisp2NzwCCmnE5naBmZI3YXMBEikZ0A0j2MzKfccASyUjUDADoLiIRhAUAoQAAAABJRU5ErkJggg==) no-repeat;
+}
+.e {
+    background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAA8AAAAPCAYAAAA71pVKAAAABmJLR0QA/wD/AP+gvaeTAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAR0lEQVQoz82SMQoAMAgDvf7/z+lUEGlB62L2S4IGSfarZQ0NhwG1km8GpdrRgPiqV0UvSbQPRmYkvs1JLSd7sARHMF173jw34CUdEZUW70QAAAAASUVORK5CYII=) no-repeat;
+}
+.se {
+    background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAA8AAAAPCAYAAAA71pVKAAAABmJLR0QA/wD/AP+gvaeTAAAACXBIWXMAAAsTAAALEwEAmpwYAAAARUlEQVQoz+2TOw7AIAzFMPe/s1mjiJaWDCy8LYOdjxTUtpveCrlwCCBgqXMWxPoRVslAFr12ngl+jR0F5Z0/w6trc+wxBllwGCMOi16NAAAAAElFTkSuQmCC) no-repeat;
+}
+.s {
+    background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAA8AAAAPCAYAAAA71pVKAAAABmJLR0QA/wD/AP+gvaeTAAAACXBIWXMAAAsTAAALEwEAmpwYAAAARElEQVQoz+WTQQoAIAgEd/z/n7drBGbUoaA5usqqKLa1S+iAR4sBA/5p5grGI5ktSJJskzr3YqXFSlIWixWXrBuuPUYDeJQhC2Rniu8AAAAASUVORK5CYII=) no-repeat;
+}
+.sw {
+    background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAA8AAAAPCAYAAAA71pVKAAAABmJLR0QA/wD/AP+gvaeTAAAACXBIWXMAAAsTAAALEwEAmpwYAAAARElEQVQoz+3TKQ4AIAxEUT73v/OgSEhDuoDAMLqviyiS2ml6u8jHJoAAhdgWeWg7eYIVSiK9dha6N0fQxeWbqw149hgD0mAYI/2qK3kAAAAASUVORK5CYII=) no-repeat;
+}
+.w {
+    background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAA8AAAAPCAYAAAA71pVKAAAABmJLR0QA/wD/AP+gvaeTAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAR0lEQVQoz9WSSQ4AIAwCGf//ZzyZGE20LgflPqUtYFu7SjrQYzDgLTgKdvAKKEmUqCKgba49jLoktXvrMr05AgzXXhnAn93OUGMdEQmTl64AAAAASUVORK5CYII=) no-repeat;
+}
+.nw {
+    background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAA8AAAAPCAYAAAA71pVKAAAABmJLR0QA/wD/AP+gvaeTAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAR0lEQVQoz2P8//8/A7mAiYECwAJjMDIyYnXC////GcmyGZ9GvJoJacSrGZc38GpGtpGQAUzYNBJrABMuPxLjZ8YBSyQjUTMAt0wiEXEpzqIAAAAASUVORK5CYII=) no-repeat;
+}
+
