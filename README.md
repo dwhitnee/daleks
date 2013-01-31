@@ -1,5 +1,5 @@
 # Daleks!
-Copyright (c) 2013 David Whitney. <a href="http://dwhitnee.s3-website-us-east-1.amazonaws.com/</a>
+Copyright (c) 2013 <a href="http://dwhitnee.s3-website-us-east-1.amazonaws.com/">David Whitney</a>
 
 ## Play it!
 http://dwhitnee.s3.amazonaws.com/js/daleks/daleks.html
