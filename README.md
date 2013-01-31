@@ -2,7 +2,7 @@
 Copyright (c) 2013 <a href="http://dwhitnee.s3-website-us-east-1.amazonaws.com/">David Whitney</a>
 
 ## Play it!
-http://dwhitnee.s3.amazonaws.com/js/daleks/daleks.html
+http://dwhitnee.s3-website-us-east-1.amazonaws.com/js/daleks/
 
 ## About
 The Daleks video game, written entirely in HTML5 and javascript.
