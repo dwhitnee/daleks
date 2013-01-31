@@ -1,5 +1,5 @@
 # Daleks!
-(c) 2013, David Whitney
+Copyright (c) 2013 David Whitney. <a href="http://dwhitnee.s3-website-us-east-1.amazonaws.com/</a>
 
 ## Play it!
 http://dwhitnee.s3.amazonaws.com/js/daleks/daleks.html
@@ -21,4 +21,5 @@ All code written and directed by David Whitney.
 * Google Closure Compiler for compilation and compression.
 * Gameplay inspired by the 1984 Mac version by Johan Strandberg, but it is much like the other "robots" type games as seen here on Wikipedia
 http://en.wikipedia.org/wiki/Daleks_(video_game)
+
 

@@ -1,0 +1,32 @@
+body {
+    font-family: Arial, Helvetica, sans-serif;
+}
+div {
+    padding-bottom: 1em;
+}
+#thanks {
+    font-weight: bold;
+    color: green;
+}
+#request {
+    font-weight: bold;
+    background: #eee;
+    width: 25em;
+    padding: 1em;
+    margin: 1em;
+    border-radius: 15px;
+    border: 2px solid black;
+}
+#explanation {
+    width: 25em;
+    padding: 1em;
+}
+#error {
+    font-weight: bold;
+    color: red;
+}
+#paynow {
+    padding-left: 10em;
+    padding-top: 1em;
+}
+.hidden { display: none; }
