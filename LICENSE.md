@@ -1,6 +1,8 @@
 # License
 
-The MIT License : <a href="http://opensource.org/licenses/MIT">http://opensource.org/licenses/MIT</a>
+The MIT License : <a href="http://opensource.org/licenses/MIT">
+http://opensource.org/licenses/MIT</a>
+
 Copyright (c) 2013 <a href="http://dwhitnee.s3-website-us-east-1.amazonaws.com/">David Whitney</a>
 
 Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the 'Software'), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
