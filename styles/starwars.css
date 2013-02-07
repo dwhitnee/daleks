@@ -1,0 +1,146 @@
+/*
+   Allow Star Wars-style opening credits.
+   Adapted from the original article at
+   http://www.sitepoint.com/css3-starwars-scrolling-text/
+*/
+
+@import url(http://fonts.googleapis.com/css?family=Droid+Sans:400,700);
+
+/*
+  State of CSS3 adoption:  http://caniuse.com/#feat=css-animation
+  ms- only needed in IE9, don't work in IE8.  IE10 not needed.
+  moz- is dead in FF
+  o- current Opera doesn't need
+  webkit- is still widespread...
+*/
+
+* { padding: 0; margin: 0; }
+
+body, html {
+  width: 100%;
+  height: 100%;
+  font-family: "Droid Sans", arial, verdana, sans-serif;
+  font-weight: 700;
+  color: #ff6;
+  background-color: #000;
+  overflow: hidden;
+}
+
+/* title fade out */
+@-webkit-keyframes intro {
+    0% { opacity: 1; } 90% { opacity: 1; } 100% { opacity: 0; }
+}
+@-ms-keyframes intro {
+    0% { opacity: 1; } 90% { opacity: 1; } 100% { opacity: 0; }
+}
+@keyframes intro {
+    0% { opacity: 1; } 90% { opacity: 1; } 100% { opacity: 0; }
+}
+
+h1 {
+    position: absolute;
+    width: 5em;
+    left: 50%;
+    top: 25%;
+    font-size: 10em;
+    text-align: center;
+    margin-left: -2.5em;
+    line-height: 1em;
+    letter-spacing: -0.05em;
+    color: #000;
+    text-shadow: -2px -2px 0 #ff6, 2px -2px 0 #ff6, -2px 2px 0 #ff6, 2px 2px 0 #ff6;
+    opacity: 0;
+    z-index: 1;
+
+    /* wait 1sec and display title, take 5s to fade out */
+    -webkit-animation: logo 5s ease-out 1s;
+        -ms-animation: logo 5s ease-out 1s;
+            animation: logo 5s ease-out 1s;
+}
+
+@-webkit-keyframes logo {
+      0% { -webkit-transform: scale(1); opacity: 1; }
+     50% { opacity: 1; }
+    100% { -webkit-transform: scale(0.1); opacity: 0; }
+}
+
+@-ms-keyframes logo {
+      0% { -ms-transform: scale(1); opacity: 1; }
+     50% { opacity: 1; }
+    100% { -ms-transform: scale(0.1); opacity: 0; }
+}
+
+@keyframes logo {
+      0% { transform: scale(1); opacity: 1; }
+     50% { opacity: 1; }
+    100% { transform: scale(0.1); opacity: 0; }
+}
+
+/* the scrolling into the distance */
+#titles {
+    position: absolute;
+    width: 12em;   /* narrow this for phones? */
+    height: 50em;
+    bottom: 0;
+    left: 50%;
+    margin-left: -6em;
+    font-size: 350%;
+    text-align: justify;
+    overflow: hidden;
+    -webkit-transform-origin: 50% 100%;
+        -ms-transform-origin: 50% 100%;
+            transform-origin: 50% 100%;
+    -webkit-transform: perspective(300px) rotateX(25deg);
+        -ms-transform: perspective(300px) rotateX(25deg);
+            transform: perspective(300px) rotateX(25deg);
+}
+
+#titles:after {
+    position: absolute;
+    content: ' ';
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 60%;
+    background-image: -webkit-linear-gradient(top, rgba(0,0,0,1) 0%, transparent 100%);
+    background-image:     -ms-linear-gradient(top, rgba(0,0,0,1) 0%, transparent 100%);
+    background-image:         linear-gradient(top, rgba(0,0,0,1) 0%, transparent 100%);
+    pointer-events: none;
+}
+
+#titles p {
+    text-align: justify;
+    margin: 0.8em 0;
+}
+#titles p.center {
+    text-align: center;
+}
+#titles a {
+    color: #ff6;
+    text-decoration: underline;
+}
+
+#titlecontent {
+    position: absolute;
+    top: 100%;
+    /* wait 4s before text scrolls */
+    -webkit-animation: scroll 100s linear 2s infinite;
+        -ms-animation: scroll 100s linear 2s infinite;
+            animation: scroll 100s linear 2s infinite;
+}
+
+/* animation */
+@-webkit-keyframes scroll {
+      0% { top:  100%; }
+    100% { top: -170%; }
+}
+
+@-ms-keyframes scroll {
+      0% { top:  100%; }
+    100% { top: -170%; }
+}
+
+@keyframes scroll {
+    0%   { top:  100%; }
+    100% { top: -170%; }
+}

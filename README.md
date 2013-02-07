@@ -19,7 +19,7 @@ All code written and directed by David Whitney.
 * Images stolen liberally from the web.
 * jQuery is used for DOM manipulation and event handling.
 * Google Closure Compiler for compilation and compression.
-* Gameplay inspired by the 1984 Mac version by Johan Strandberg, but it is much like the other "robots" type games as seen here on Wikipedia
+* Gameplay inspired by the <a href="http://nonanone.com/Daleks/img/scrn_OS85_1234.png">1984 Mac version</a> by Johan Strandberg, but it is much like the other "robots" type games as seen here on Wikipedia
 http://en.wikipedia.org/wiki/Daleks_(video_game)
 
 

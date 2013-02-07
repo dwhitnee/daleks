@@ -18,7 +18,7 @@ only screen and (min-device-pixel-ratio : 1.5) {
         width: 32px;
     }
     .actions a.button {
-        font-size: 20pt;
+        /* font-size: 20pt; */
     }
 }
 
@@ -28,16 +28,18 @@ h1 {
     padding-left: 8em;
 }
 .gameData {
-    padding: 4em;
-    position: absolute;
-    top: 0;
-    right: 0;
-}
-#highScores {
     padding-top: 1em;
 }
-#instructions {
-    padding-top: 5em;
+.gameData div {
+    display: inline-block;
+    padding-right: 3em;
+}
+
+.instructions {
+    position: absolute;
+    left: 12em;
+    top: 8em;
+    color: #5489D0;
 }
 .loading {
     background: url("../images/loading.gif") 240px 120px no-repeat;
@@ -85,14 +87,19 @@ h1 {
 .sonicPulse .pulse5 {  width: 32px; height: 32px; }
 
 .actions {
-    padding: 1em;
+/*
+    float:left;
+    padding: 6em 1em;
+*/
+    position: absolute;
+    left: 32em;
+    top: 8em;
 }
 
 a.button {
     display: block;
-    float: left;
     font: bold 10pt Arial, Helvetica, sans-serif;
-    margin: 0 1em;
+    margin: 0.5em 0em;
     padding: .5em 1em;
     text-align: center;
     text-decoration: none;
@@ -115,16 +122,23 @@ a.button.disabled {
     text-shadow: none;
 }
 
+/* I hate !important, but this class needs to make things invisible and
+   preserve previous display style of element */
+.hidden {
+    display: none !important;
+}
+
 .unselectable {
   -moz-user-select:    none;
   -webkit-user-select: none;
   -ms-user-select:     none;
 }
 
+/*
 .button[data-name=abort] {
     display: none;
 }
-
+*/
 
 
 .gameover {

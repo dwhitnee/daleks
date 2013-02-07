@@ -22,6 +22,7 @@ Daleks.GameController = (function()
                           self.restoreControls();
                           return false;
                         });
+    $(".arena").on("click", function() { $(".instructions").fadeOut(1000); });
   }
 
   GameController.prototype = {
@@ -119,6 +120,7 @@ Daleks.GameController = (function()
       this.controls.disable();
       $("body").off("keydown");
       $(".actions").off( _click, "a");
+      $(".button").addClass("disabled");
     },
 
     //----------------------------------------
@@ -334,8 +336,8 @@ Daleks.GameController = (function()
       this.disableControls();
       $(".button").addClass("disabled");
 
-      this.panicButton.removeClass("disabled");
-      this.panicButton.show();
+      this.panicButton.removeClass("disabled hidden");
+      // this.panicButton.show();
 
       this.updateWorld();
     },
@@ -344,7 +346,8 @@ Daleks.GameController = (function()
     restoreControls: function() {
       this.isLastStand = false;
       this.enableControls();
-      this.panicButton.hide();
+      // this.panicButton.hide();
+      this.panicButton.addClass("hidden");
     },
 
     // hide screw driver button if used
@@ -397,7 +400,7 @@ Daleks.GameController = (function()
       $(".victory").show();
       
       var self = this;
-      $("body").one( _click, function() {
+      $(".arena").one( _click, function() {
                       self.startNextLevel();
                       return false;
                     });
@@ -417,7 +420,7 @@ Daleks.GameController = (function()
       $("#highScores").show();
 
       var self = this;
-      $("body").one( _click, function() {
+      $(".arena").one( _click, function() {
                       self.resetGame();
                       self.startNextLevel();  
                       return false;
@@ -428,11 +431,12 @@ Daleks.GameController = (function()
     //----------------------------------------
     endRound: function() {
       this.roundOver = true;
+      this.restoreControls();   // reset to normal state (ex: panic button)
       this.disableControls();
 
       // do this separately to prevent panic button form getting
       // disabled on every animation.
-      this.panicButton.hide();   
+      // this.panicButton.hide();   
     },
     
     resetGame: function() {
