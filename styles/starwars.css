@@ -123,7 +123,7 @@ h1 {
 #titlecontent {
     position: absolute;
     top: 100%;
-    /* wait 4s before text scrolls */
+    /* wait 2s before text scrolls */
     -webkit-animation: scroll 100s linear 2s infinite;
         -ms-animation: scroll 100s linear 2s infinite;
             animation: scroll 100s linear 2s infinite;

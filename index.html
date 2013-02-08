@@ -6,6 +6,12 @@
   <link rel="icon" type="image/ico" href="images/favicon.ico"/>
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- these don't seem to do much.
+       supposedly sets window.navigator.standalone
+  -->
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
 </head>
 
 <body>
@@ -23,7 +29,7 @@
 
     <div class="loading"></div>
 
-    <div class="instructions">Click on arrows to move</div>
+    <div class="instructions">Click near arrows to move</div>
 
     <div class="gameover victory">
       <div class="banner">
@@ -64,10 +70,10 @@
 
   <script src="build/jquery-1.8.0.min.js"></script>
 <!--  <script src="build/jgestures.min.js"></script> -->
+
 <!--
   <script src="build/scripts.min.js"></script>
 -->
-
   <script src="scripts/daleks.js"></script>
   <script src="scripts/piece.js"></script>
   <script src="scripts/board.js"></script>
@@ -76,5 +82,10 @@
   <script src="scripts/sonicPulse.js"></script>
   <script src="scripts/game.js"></script>
 
+<script>
+  $(document).ready( function() {
+    $('body').scrollTop(0);  // hide location bar on mobile
+  });
+</script>
 </body>
 </html>

@@ -4,7 +4,10 @@
   <meta charset="UTF-8" />
   <title>About Daleks&hellip;</title>
   <link rel="stylesheet" type="text/css" href="styles/starwars.css"/>
+
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
 </head>
 
 <!-- Adopted from the original article at
@@ -36,16 +39,20 @@
   </div>
 </div>
 
-<audio id="themeSong" src="StarWars.mp3" type="audio/mpeg" preload/>
-<script src="build/jquery-1.8.0.min.js"></script>
+<script type="text/javascript">
+  // return on click
+  document.getElementsByClassName('container')[0].onclick =
+    function() { history.back();  };
+  document.body.scrollTop = 0;  // hide location bar on mobile
+</script>
+
+
+<!-- <audio id="themeSong" src="StarWars.mp3" type="audio/mpeg" preload/>
 <script type="text/javascript">
 //  var themeSong = document.getElementById('themeSong');
 //  setTimeout( function(){themeSong.play();}, 1000 );
-
-  $(".container").on("click", function(){window.location.href = "index.html";});
-
 </script>
-
+-->
 
 </body>
 </html>

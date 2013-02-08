@@ -22,7 +22,11 @@ Daleks.GameController = (function()
                           self.restoreControls();
                           return false;
                         });
-    $(".arena").on("click", function() { $(".instructions").fadeOut(1000); });
+    $(".arena").on("click", function() { 
+                     // $(".instructions").fadeOut(1000); 
+                     $(".instructions").addClass("fadeOut"); 
+                     // $(".arrowTouch").addClass("fadeOutHighlight"); 
+                   });
   }
 
   GameController.prototype = {
@@ -105,12 +109,12 @@ Daleks.GameController = (function()
 
       // data-name is the function to call on click
       $(".actions").on( _click, "a", function(e) {
-                         e.preventDefault();
-                         var fn = $(e.target).closest('a').data('name');
-                         if (self[fn]) {
-                           self[fn].call( self );
-                         }
-                         return false;
+                          e.preventDefault();
+                          var fn = $(e.target).closest('a').data('name');
+                          if (self[fn]) {
+                            self[fn].call( self );
+                          }
+                          return false;
                       });
 
       this.updateScrewDriver();

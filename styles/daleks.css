@@ -14,8 +14,10 @@ body {
 only screen and (-webkit-min-device-pixel-ratio : 1.5),
 only screen and (min-device-pixel-ratio : 1.5) {
     .board .piece {
+/*
         height: 32px;
         width: 32px;
+*/
     }
     .actions a.button {
         /* font-size: 20pt; */
@@ -37,7 +39,7 @@ h1 {
 
 .instructions {
     position: absolute;
-    left: 12em;
+    left: 10em;
     top: 8em;
     color: #5489D0;
 }
@@ -62,9 +64,18 @@ h1 {
 
 .arrow {
     display: none;  /* at first */
-    z-index: 1;
+    z-index: 2;
+    margin: 1px;
 }
-
+div.arrowTouch {
+    z-index: 1;
+    height: 48px;
+    width: 48px;
+}
+.highlight {
+    border: 1px solid grey;
+    margin: 0;
+}
 .small {
     font-size: small;
 }
@@ -99,7 +110,7 @@ h1 {
 a.button {
     display: block;
     font: bold 10pt Arial, Helvetica, sans-serif;
-    margin: 0.5em 0em;
+    margin: 0.5em;
     padding: .5em 1em;
     text-align: center;
     text-decoration: none;
@@ -126,6 +137,11 @@ a.button.disabled {
    preserve previous display style of element */
 .hidden {
     display: none !important;
+}
+
+.fadeOut {
+    opacity: 0;
+    transition: all 0.5s ease-in-out;
 }
 
 .unselectable {
@@ -193,18 +209,6 @@ a.button.disabled {
 
 
 
-
-/* arrow icons */
-/*
-.n  { background: url("images/n.png") no-repeat; }
-.s  { background: url("images/s.png") no-repeat; }
-.e  { background: url("images/e.png") no-repeat; }
-.w  { background: url("images/w.png") no-repeat; }
-.ne { background: url("images/ne.png") no-repeat; }
-.nw { background: url("images/nw.png") no-repeat; }
-.se { background: url("images/se.png") no-repeat; }
-.sw { background: url("images/sw.png") no-repeat; }
-*/
 .n {
     background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAA8AAAAPCAYAAAA71pVKAAAABmJLR0QA/wD/AP+gvaeTAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAQ0lEQVQoz82SOw4AMAhCfd7/znRq0kX7SxsZhcdARJKdyu1CKQwI0DY8QlGBz8Ds5iuhyCNbu4cl8XftujA13/Mp3AAe/BUj39LO1wAAAABJRU5ErkJggg==) no-repeat;
 }

@@ -1,5 +1,10 @@
+// require("daleks.js");
+
 //----------------------------------------------------------------------
 // A Piece occupies a space on the board that no one else can occupy.
+// args = {
+//    size: in pixels of piece (should match css)
+//   offset: offset in pixels to draw this piece
 //----------------------------------------------------------------------
 Daleks.Piece = (function()
 {
@@ -7,9 +12,10 @@ Daleks.Piece = (function()
     args = args || {};
 
     this.pos = { x: 0, y: 0 };
-    this.size = 16;
-    this.isAnimating = false;
+    this.size = args.size || 16;
+    this.offset = args.offset || 0;
     this.frameCount = args.frameCount || 8;
+    this.isAnimating = false;
 
     this.el = $('<div class="piece ' + className + '"/>');
     // this.hide();   // hide until position set
@@ -82,8 +88,8 @@ Daleks.Piece = (function()
         
     // draw using CSS
     drawAt: function( pos ) {
-      this.el.css("left", pos.x );
-      this.el.css("bottom", pos.y );
+      this.el.css("left", pos.x - this.offset );
+      this.el.css("bottom", pos.y - this.offset );
     },
 
     //----------------------------------------
@@ -124,17 +130,9 @@ Daleks.Piece = (function()
     },
     show: function() {
       this.getEl().css("display","inherit");
-    },
+    }
 
-    _doSomethingQuasiPrivate: function() {
-        return true;
-      }
-    };
-
-    // Private functions
-    function _doSomethingPrivate() {
-        return "secret!";
-    };
-
-    return Piece;
+  };
+ 
+  return Piece;
 })();
