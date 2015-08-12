@@ -33,10 +33,13 @@ X Click to start next round needs to be <a> tag for mobile?
 X http://dwhitnee.s3-website-us-east-1.amazonaws.com/
 X Star Wars intro
 X Credits
+X on mouse over, highlight arrow
+X Make arrows bigger?  Or at least click area?  Or big arrows to the right.
+X Add larger touch areas outside arrows.
 
-on mouse over, highlight arrow
-Make arrows bigger?  Or at least click area?  Or big arrows to the right.
-! Add larger touch areas outside arrows.
+Tweet
+persistent high score (write only S3 bucket? Dynamo?)
+ * name authentication? oauth? just top 10?
 
 animate doctor dying with sprite and background image?
 
@@ -51,13 +54,14 @@ http://fff.cmiscm.com/#!/main
 Die better (one animation)
 Dalek destruction animation
 
-Don't short change high score when doctor dies as daleks collide.
-
 Named high score (central server? IAM to S3 or Dynamo?)
   - version this
 
 Comments/Feedback section?  (blog?)
 Raffle?
+
+Heatmap?
+https://github.com/pyalot/webgl-heatmap
 
 Tests
 
@@ -78,7 +82,3 @@ Sound
 
 Ads
 Tweet/Facebook icon
-
-
-Nope:
-Toggle grid?
