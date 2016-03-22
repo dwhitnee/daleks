@@ -9,14 +9,15 @@ require 'fileutils'
 srcDir = "scripts/"
 buildDir = "build/"
 
-closure    = "/Users/dwhitney/Sites/build/compiler-latest/compiler.jar"
-externsDir = "/Users/dwhitney/Sites/build/"
+#closure    = "/Users/dwhitney/Sites/build/compiler-latest/compiler.jar"
+closure    = "build/compiler-latest/compiler.jar"
+externsDir = "build/externs"
 
 #  --compilation_level=ADVANCED_OPTIMIZATIONS
 closure_args = %W{
   --warning_level=VERBOSE
   --language_in=ECMASCRIPT5_STRICT
-  --externs #{externsDir}jquery-1.8.externs.js
+  --externs #{externsDir}/jquery-1.9.js
 }
 
 # how to get extern_url into cli?
